@@ -11,10 +11,10 @@
         <div class="calculator">
             <form action="">
                 <div class="display">
-                    <input type="text" id="display" name="display">
+                    <input type="text" id="display" name="display" t>
                 </div>
                 <div>
-                    <input type="button" value="AC" onclick="display.value = '' " class="operator">
+                    <input type="button" inputmode="numeric" value="AC" onclick="display.value = '' " class="operator">
                     <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1) " class="operator">
                     <input type="button" value="." onclick="display.value += ',' " class="operator">
                     <input type="button" value="/" onclick="display.value += '/' " class="operator">
@@ -48,28 +48,29 @@
 
     <script>
         // Fungsi untuk memvalidasi apakah ekspresi hanya berisi angka dan operator matematika
-        function isValidExpression(expression) {
-            const regex = /^[0-9+\-*/().\s]*$/;  // Hanya izinkan angka dan operator matematika
-            return regex.test(expression);
-        }
+        // function isValidExpression(expression) {
+        //     const regex = /^[0-9+\-*/().\s]*$/;  // Hanya izinkan angka dan operator matematika
+        //     return regex.test(expression);
+        // }
 
-        // Fungsi untuk mengevaluasi ekspresi dengan aman menggunakan Function() daripada eval()
-        function calculate() {
-            const expression = document.getElementById('display').value;
+        // // Fungsi untuk mengevaluasi ekspresi dengan aman menggunakan Function() daripada eval()
+        // function calculate() {
+        //     const expression = document.getElementById('display').value;
             
-            // Validasi ekspresi sebelum evaluasi
-            if (isValidExpression(expression)) {
-                try {
-                    // Menggunakan Function() untuk evaluasi ekspresi matematika
-                    const result = new Function('return ' + expression)();
-                    document.getElementById('display').value = result;
-                } catch (error) {
-                    alert("Ekspresi tidak valid");
-                }
-            } else {
-                alert("Ekspresi tidak valid");
-            }
-        }
+        //     // Validasi ekspresi sebelum evaluasi
+        //     if (isValidExpression(expression)) {
+        //         try {
+        //             // Menggunakan Function() untuk evaluasi ekspresi matematika
+        //             const result = new Function('return ' + expression)();
+        //             document.getElementById('display').value = result;
+        //         } catch (error) {
+        //             alert("Ekspresi tidak valid");
+        //         }
+        //     } else {
+        //         alert("Ekspresi tidak valid");
+        //     }
+        // }
     </script>
+    <script src="main.js"></script>
 </body>
 </html>
